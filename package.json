@@ -1,0 +1,35 @@
+{
+  "name": "@ferdotnet/form-builder",
+  "version": "1.0.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "repository": "git@github.com:fermdotnet/form-builder.git",
+  "author": "Fernando Munoz <munioz.fernando@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs && yarn styles",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "styles": "ncp src/styles.scss lib/styles.scss && ncp src/basicInputs/styles.scss lib/basicInputs/styles.scss && node-sass lib -o lib",
+    "prepublishOnly": "yarn build"
+  },
+  "peerDependencies": {
+    "classnames": "^2.3.2",
+    "joi": "^17.9.2",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.40",
+    "ncp": "^2.0.0",
+    "node-sass": "^9.0.0",
+    "typescript": "^4.6.2"
+  },
+  "files": [
+    "/lib"
+  ]
+}

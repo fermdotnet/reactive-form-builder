@@ -1,0 +1,113 @@
+.form-builder {
+  --form-builder-color: #2E2C2C;
+  --form-builder-border-color: #EAEAEA;
+  --form-builder-focus-border-color: #7676A7;
+  --form-builder-background-color: #FFFFFF;
+  --form-builder-disabled-background-color: #F6F6F6;
+  --form-builder-input-font-size: 14px;
+  --form-builder-border-radius: 3px;
+  --form-builder-input-height: 2.5rem;
+  --form-builder-check-size: 1rem;
+
+  &__input,
+  &__select {
+    height: var(--form-builder-input-height);
+  }
+
+  &__input,
+  &__select,
+  &__textarea {
+    background-color: var(--form-builder-background-color);
+    padding: 0 .75rem;
+    border-radius: var(--form-builder-border-radius);
+    border: 1px solid var(--form-builder-border-color);
+    color: var(--form-builder-color);
+    font-size: var(--form-builder-input-font-size);
+    transition: border-color .25s ease-in-out;
+
+    &:focus {
+      border-color: var(--form-builder-focus-border-color);
+    }
+
+    &[disabled] {
+      background-color: var(--form-builder-disabled-background-color);
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    height: 140px;
+    padding: .75rem;
+  }
+
+  &__radio-list,
+  &__check-list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--form-builder-gap) * .25);
+
+    > div {
+      display: flex;
+      flex-direction: row;
+
+      > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: var(--form-builder-check-size);
+          height: var(--form-builder-check-size);
+          min-width: var(--form-builder-check-size);
+          min-height: var(--form-builder-check-size);
+          background-color: var(--form-builder-background-color);
+          border: 1px solid var(--form-builder-border-color);
+
+          &::before {
+            content: '';
+            display: block;
+            width: calc(var(--form-builder-check-size) * .5);
+            height: calc(var(--form-builder-check-size) * .5);
+            background-color: var(--form-builder-color);
+            opacity: 0;
+            transition: opacity .25s ease-in-out;
+          }
+        }
+
+        span {
+          padding-left: calc(var(--form-builder-gap) * .5);
+        }
+
+        &.selected div {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__radio-list {
+    > div > div div {
+      border-radius: 50%;
+
+      &::before {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__check-list {
+    > div > div div {
+      border-radius: 2px;
+
+      &::before {
+        border-radius: 2px;
+      }
+    }
+  }
+}
