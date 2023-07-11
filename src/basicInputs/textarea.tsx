@@ -12,7 +12,7 @@ const Textarea = ({ value, name, onChange, onBlur, placeholder, limit, disabled 
     name={name}
     placeholder={placeholder}
     value={value}
-    onChange={({ target }) => onChange(target.value, target.name)}
+    onChange={({ target }) => onChange(target.value)}
     onBlur={onBlur}
     disabled={disabled}
     maxLength={limit}

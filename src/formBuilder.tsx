@@ -42,7 +42,7 @@ const FormBuilder = ({ handler }: Props) => {
               onChange: handler.setFormData(key)
             })}
 
-            {!pristine && !!error && <span className="form-builder__error-message">{error}</span>}
+            <span className="form-builder__error-message">{!pristine && !!error ? error : ''}</span>
           </div>
         );
       })}

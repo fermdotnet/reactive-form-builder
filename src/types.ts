@@ -15,7 +15,7 @@ export type FormBuilderSchemaType = {
 
 export type FormBuilderInputCommonProps = {
   value: any;
-  onChange: (value: any, name?: string) => void;
+  onChange: (value: any) => void;
   required: boolean;
   onBlur: () => void;
   label: string;

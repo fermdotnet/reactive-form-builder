@@ -10,8 +10,8 @@ export type TextInputProps = FormBuilderInputCommonProps & {
 };
 
 const Text = ({ type, placeholder, name, value, onChange, onBlur, limit, disabled = false }: TextInputProps) => {
-  const handleChange = (value: any, name: string) => {
-    onChange(type === 'number' ? +value : value, name);
+  const handleChange = (value: any) => {
+    onChange(type === 'number' ? +value : value);
   };
 
   return (
@@ -21,7 +21,7 @@ const Text = ({ type, placeholder, name, value, onChange, onBlur, limit, disable
       placeholder={placeholder}
       name={name}
       value={value}
-      onChange={({ target }) => handleChange(target.value, target.name)}
+      onChange={({ target }) => handleChange(target.value)}
       onBlur={onBlur}
       disabled={disabled}
       maxLength={limit}

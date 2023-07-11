@@ -14,7 +14,7 @@ const Select = ({ onChange, onBlur, options, value, disabled = false }: SelectPr
   return (
     <select
       className="form-builder__select"
-      onChange={({ target }) => onChange(target.value, target.name)}
+      onChange={({ target }) => onChange(target.value)}
       onBlur={onBlur}
       disabled={disabled}
       value={value}

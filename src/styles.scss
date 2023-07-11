@@ -21,6 +21,13 @@
     padding-top: .25rem;
     font-size: var(--form-builder-error-font-size);
     color: var(--form-builder-error-color);
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+
+    &:empty {
+      padding-top: 0;
+      opacity: 0;
+    }
   }
 
   .error {
