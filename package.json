@@ -15,7 +15,7 @@
     "build": "yarn build:esm && yarn build:cjs && yarn styles",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
-    "styles": "ncp src/styles.scss lib/styles.scss && ncp src/basicInputs/styles.scss lib/basicInputs/styles.scss && node-sass lib -o lib",
+    "styles": "ncp src/styles.scss lib/styles.scss && ncp src/basicInputs/styles.scss lib/basicInputs.scss && node-sass lib -o lib",
     "prepublishOnly": "yarn build"
   },
   "peerDependencies": {
@@ -24,7 +24,7 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^17.0.40",
+    "@types/react": "^18.2.14",
     "ncp": "^2.0.0",
     "node-sass": "^9.0.0",
     "typescript": "^4.6.2"
