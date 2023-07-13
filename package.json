@@ -19,11 +19,6 @@
     "prepublishOnly": "yarn build",
     "test": "jest"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn test"
-    }
-  },
   "peerDependencies": {
     "@ferdotnet/use-debounce": "^0.0.2",
     "classnames": "^2.3.2",
