@@ -10,7 +10,7 @@ export type SelectProps = {
   options: Option[];
 } & FormBuilderInputCommonProps;
 
-const Select = ({ onChange, onBlur, options, value, disabled = false }: SelectProps) => {
+const Select = ({ name, onChange, onBlur, options, value, disabled = false }: SelectProps) => {
   return (
     <select
       className="form-builder__select"
@@ -18,6 +18,7 @@ const Select = ({ onChange, onBlur, options, value, disabled = false }: SelectPr
       onBlur={onBlur}
       disabled={disabled}
       value={value}
+      name={name}
     >
       <option key="empty" value="">
         -

@@ -21,19 +21,21 @@ const FormBuilder = ({ handler }: Props) => {
         return (
           <div
             key={key}
+            data-testid={`form_builder_${key}`}
             className={classnames(
               'form-builder__input-wrapper',
               { error: !pristine && error },
               `form-builder__input-${key}`
             )}
           >
-            <label className="form-builder__label">
+            <label className="form-builder__label" htmlFor={`form_builder_${item.name}`}>
               {item.label}
               {required ? ' *' : ''}
             </label>
 
             {createElement(item.input, {
               ...item,
+              key,
               required,
               value: handler.data[key],
               error,
