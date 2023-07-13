@@ -4,6 +4,11 @@ Build dynamic forms in minutes using React Form Builder. Leverage JOI integratio
 ### I'm working on the documentation and also adding some examples. Reach me out if needed
 
 
+```
+yarn add joi classnames @ferdotnet/use-debounce
+```
+
+
 ![image](https://github.com/fermdotnet/form-builder/assets/11689288/cd9637be-9980-4ebf-b3eb-678ff28c9dbb)
 
 ```
