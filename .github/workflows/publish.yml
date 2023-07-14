@@ -28,5 +28,6 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: yarn install --frozen-lockfile
+      run: yarn add joi classnames @ferdotnet/use-debounce react react-dom
     - name: Run tests
       run: yarn test
