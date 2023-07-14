@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import joi from 'joi';
 import { FormBuilderSchemaType } from './types';
 
@@ -26,7 +26,7 @@ function useFormBuilder(schema: FormBuilderSchemaType = {}, debug: boolean = fal
     schema
   });
 
-  const resetForm = useCallback(() => {
+  const resetForm = () => {
     setForm({
       valid: false,
       pristine: fillDefaultPristine(schema),
@@ -34,35 +34,35 @@ function useFormBuilder(schema: FormBuilderSchemaType = {}, debug: boolean = fal
       errors: fillDefaultErrors(schema),
       schema
     });
-  }, []);
+  };
 
-  const blurred = useCallback((key: string) => () => {
+  const blurred = (key: string) => () => {
     setForm((prev: any) => ({
       ...prev,
       pristine: { ...prev.pristine, [key]: false }
     }));
-  }, []);
+  };
 
-  const setSchema = useCallback((schema: FormBuilderSchemaType) => {
+  const setSchema = (schema: FormBuilderSchemaType) => {
     setForm((prev: any) => ({ ...prev, schema }));
-  }, []);
+  };
 
-  const setFormData = useCallback((key: string) => (value: any) => {
+  const setFormData = (key: string) => (value: any) => {
     setForm((prev: any) => ({
       ...prev,
       data: { ...prev.data, [key]: value },
       pristine: { ...prev.pristine, [key]: false }
     }));
-  }, []);
+  };
 
-  const setFullForm = useCallback((data: any) => {
+  const setFullForm = (data: any) => {
     setForm((prev: any) => ({
       ...prev,
       data: { ...prev.data, ...data }
     }));
-  }, []);
+  };
 
-  const validate = useCallback(() => {
+  const validate = () => {
     const { schema, data } = form;
     const errors: any = fillDefaultErrors(schema);
     const validator = joi
@@ -96,7 +96,7 @@ function useFormBuilder(schema: FormBuilderSchemaType = {}, debug: boolean = fal
     }
 
     setForm((prev: any) => ({ ...prev, errors, valid: isFormValid }));
-  }, []);
+  };
 
   useEffect(() => {
     if (form.data) {
