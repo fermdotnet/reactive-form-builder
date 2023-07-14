@@ -81,7 +81,7 @@ function useFormBuilder(schema: FormBuilderSchemaType = {}, debug: boolean = fal
           }))
         );
       } else {
-        console.log('Form with no errors');
+        console.log("Form with no errors");
       }
     }
 
