@@ -10,7 +10,7 @@
   "types": "./lib/esm/index.d.ts",
   "repository": {
     "type": "git",
-    "semantic-release": "https://github.com/fermdotnet/form-builder.git"
+    "url": "https://github.com/fermdotnet/form-builder.git"
   },
   "author": "Fernando Munoz <munioz.fernando@gmail.com>",
   "license": "MIT",
