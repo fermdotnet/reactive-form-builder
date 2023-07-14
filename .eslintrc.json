@@ -32,7 +32,6 @@
         "react/display-name": "off",
         "no-unused-vars": "off",
         "spaceBeforeFunctionParen": "off",
-        "@typescript-eslint/no-unused-vars": ["error"],
         "jsx-a11y/label-has-associated-control": "off",
         "jsx-a11y/label-has-for": "off",
         "jsx-a11y/alt-text": "off",
@@ -44,6 +43,18 @@
                 "components": ["Link"],
                 "specialLink": ["hrefLeft", "hrefRight"],
                 "aspects": ["invalidHref", "preferButton"]
+            }
+        ],
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/ban-types": [
+            "error",
+            {
+                "extendDefaults": true,
+                "types": {
+                    "Object": false,
+                    "Function": false
+                }
             }
         ]
     },

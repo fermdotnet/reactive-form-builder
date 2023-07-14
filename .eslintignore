@@ -1,6 +1,7 @@
 node_modules
 lib
 coverage
+.github
 jest.config.js
 release.config.js
 setupTests.ts

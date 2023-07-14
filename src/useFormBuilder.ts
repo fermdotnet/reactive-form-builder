@@ -81,11 +81,11 @@ function useFormBuilder(schema: FormBuilderSchemaType = {}, debug: boolean = fal
           }))
         );
       } else {
-        console.log("Form with no errors");
+        console.log('Form with no errors');
       }
     }
 
-    for (let key of Object.keys(schema)) {
+    for (const key of Object.keys(schema)) {
       const e = details.filter(item => item.path.includes(key));
       const hasError = e.length > 0;
 

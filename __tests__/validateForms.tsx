@@ -5,12 +5,12 @@ import { FormBuilder, useFormBuilder, Input } from '../src';
 
 const schema = {
   name: {
-    value: "",
-    label: "Name",
+    value: '',
+    label: 'Name',
     input: Input,
-    type: "text",
+    type: 'text',
     joi: joi.string().required().messages({
-      "string.empty": 'Error'
+      'string.empty': 'Error'
     })
   }
 };
@@ -30,10 +30,13 @@ describe('Form validation tests', () => {
     if (nameInput) {
       fireEvent.blur(nameInput);
 
-      await waitFor(async () => {
-        const errorSpan = getByTestId(testId).querySelector('.form-builder__error-message');
-        expect(errorSpan!.textContent).toBe('Error');
-      }, {timeout: 1000});
+      await waitFor(
+        async () => {
+          const errorSpan = getByTestId(testId).querySelector('.form-builder__error-message');
+          expect(errorSpan!.textContent).toBe('Error');
+        },
+        { timeout: 1000 }
+      );
     } else {
       throw new Error('Input field not found');
     }

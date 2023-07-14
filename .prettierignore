@@ -1,3 +1,9 @@
 node_modules
 lib
 coverage
+jest.config.js
+release.config.js
+setupTests.ts
+README.md
+.eslintrc.json
+.github

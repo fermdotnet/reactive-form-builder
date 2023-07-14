@@ -1,9 +1,9 @@
 .form-builder {
-  --form-builder-color: #2E2C2C;
-  --form-builder-border-color: #EAEAEA;
-  --form-builder-focus-border-color: #7676A7;
-  --form-builder-background-color: #FFFFFF;
-  --form-builder-disabled-background-color: #F6F6F6;
+  --form-builder-color: #2e2c2c;
+  --form-builder-border-color: #eaeaea;
+  --form-builder-focus-border-color: #7676a7;
+  --form-builder-background-color: #ffffff;
+  --form-builder-disabled-background-color: #f6f6f6;
   --form-builder-input-font-size: 14px;
   --form-builder-border-radius: 3px;
   --form-builder-input-height: 2.5rem;
@@ -18,12 +18,12 @@
   &__select,
   &__textarea {
     background-color: var(--form-builder-background-color);
-    padding: 0 .75rem;
+    padding: 0 0.75rem;
     border-radius: var(--form-builder-border-radius);
     border: 1px solid var(--form-builder-border-color);
     color: var(--form-builder-color);
     font-size: var(--form-builder-input-font-size);
-    transition: border-color .25s ease-in-out;
+    transition: border-color 0.25s ease-in-out;
 
     &:focus {
       border-color: var(--form-builder-focus-border-color);
@@ -37,14 +37,14 @@
   &__textarea {
     resize: vertical;
     height: 140px;
-    padding: .75rem;
+    padding: 0.75rem;
   }
 
   &__radio-list,
   &__check-list {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--form-builder-gap) * .25);
+    gap: calc(var(--form-builder-gap) * 0.25);
     font-size: var(--form-builder-input-font-size);
 
     > div {
@@ -71,16 +71,16 @@
           &::before {
             content: '';
             display: block;
-            width: calc(var(--form-builder-check-size) * .5);
-            height: calc(var(--form-builder-check-size) * .5);
+            width: calc(var(--form-builder-check-size) * 0.5);
+            height: calc(var(--form-builder-check-size) * 0.5);
             background-color: var(--form-builder-color);
             opacity: 0;
-            transition: opacity .25s ease-in-out;
+            transition: opacity 0.25s ease-in-out;
           }
         }
 
         span {
-          padding-left: calc(var(--form-builder-gap) * .5);
+          padding-left: calc(var(--form-builder-gap) * 0.5);
         }
 
         &.selected div {
