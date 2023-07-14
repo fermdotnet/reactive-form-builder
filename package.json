@@ -8,7 +8,10 @@
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
-  "repository": "git@github.com:fermdotnet/form-builder.git",
+  "repository": {
+    "type": "git",
+    "semantic-release": "https://github.com/fermdotnet/form-builder.git"
+  },
   "author": "Fernando Munoz <munioz.fernando@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -28,8 +31,6 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.6",
-    "@commitlint/config-conventional": "^17.6.6",
     "@ferdotnet/use-debounce": "^0.0.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -57,10 +58,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   }
 }
