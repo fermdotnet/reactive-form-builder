@@ -19,6 +19,7 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir lib/cjs",
     "commit": "git-cz",
+    "commit-all": "git add --all && git-cz && git push",
     "styles": "ncp src/styles.scss lib/styles.scss && ncp src/basicInputs/styles.scss lib/basicInputs.scss && node-sass lib -o lib",
     "prepublishOnly": "yarn build",
     "test": "jest",
