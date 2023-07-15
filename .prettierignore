@@ -1,6 +1,7 @@
 node_modules
 lib
 coverage
+package.json
 jest.config.js
 tsconfig.lib.json
 release.config.js
