@@ -31,7 +31,7 @@ jobs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile
     - name: Install dependencies marked as peer dependencies
-      run: yarn add joi classnames @ferdotnet/use-debounce react react-dom
+      run: yarn add joi classnames react react-dom
     - name: Run tests
       run: yarn test
 

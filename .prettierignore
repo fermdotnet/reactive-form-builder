@@ -2,6 +2,7 @@ node_modules
 lib
 coverage
 jest.config.js
+tsconfig.lib.json
 release.config.js
 vite.config.js
 setupTests.ts

@@ -15,10 +15,10 @@
   "author": "Fernando Munoz <munioz.fernando@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
+    "vite:dev": "vite",
     "build": "yarn build:esm && yarn build:cjs && yarn styles",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module commonjs --outDir lib/cjs",
+    "build:esm": "tsc --project tsconfig.lib.json",
+    "build:cjs": "tsc --project tsconfig.lib.json --module commonjs --outDir lib/cjs",
     "commit": "git-cz",
     "commit-all": "git add --all && git-cz && git push",
     "styles": "ncp src/styles.scss lib/styles.scss && ncp src/basicInputs/styles.scss lib/basicInputs.scss && node-sass lib -o lib",
