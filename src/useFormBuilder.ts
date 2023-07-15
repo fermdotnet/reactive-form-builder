@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import joi from 'joi';
-import { FormBuilderSchemaType } from './types';
+import { FormBuilderSchemaType, FormBuilderState } from './types';
 
 const objectToArray = (object: Object) => {
   const array = Object.entries(object).map(([k, v]) => ({ ...v, id: k }));
   return array;
 };
 
-export const objectMap = (obj: Object, fn: Function) => {
+export const objectMap = (obj: any, fn: Function) => {
   const arr = Object.entries(obj).map(([k, v], i) => [k, fn(v, k, i)]);
   return arr.reduce((acc, cur) => ({ ...acc, [cur[0]]: cur[1] }), {}); // Object.fromEntries
 };
@@ -18,7 +18,7 @@ const fillDefaultPristine = (schema: FormBuilderSchemaType) => (schema ? objectM
 const fillDefaultErrors = (schema: FormBuilderSchemaType) => (schema ? objectMap(schema, () => '') : null);
 
 function useFormBuilder(schema: FormBuilderSchemaType = {}, debug: boolean = false) {
-  const [form, setForm] = useState<any>({
+  const [form, setForm] = useState<FormBuilderState>({
     valid: false,
     data: fillDefaultData(schema),
     pristine: fillDefaultPristine(schema),

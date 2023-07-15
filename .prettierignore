@@ -3,7 +3,9 @@ lib
 coverage
 jest.config.js
 release.config.js
+vite.config.js
 setupTests.ts
 README.md
 .eslintrc.json
 .github
+devSrc/index.html

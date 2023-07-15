@@ -18,5 +18,5 @@
     "suppressImplicitAnyIndexErrors": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src", "__tests__"]
+  "include": ["src", "devSrc", "__tests__"]
 }

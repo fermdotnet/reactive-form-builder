@@ -25,3 +25,11 @@ export type FormBuilderInputCommonProps = {
   placeholder?: string;
   disabled?: boolean;
 };
+
+export type FormBuilderState = {
+  valid: boolean;
+  data: Record<string, any> | null;
+  pristine: Record<string, boolean> | null;
+  errors: Record<string, string> | null;
+  schema: FormBuilderSchemaType;
+};
