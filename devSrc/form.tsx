@@ -1,6 +1,6 @@
 import React from 'react';
 import joi from 'joi';
-import { FormBuilder, useFormBuilder, Input } from '../src';
+import { ReactiveFormBuilder, useReactiveFormBuilder, Input } from '../src';
 
 const schema = {
   name: {
@@ -24,7 +24,7 @@ const schema = {
 };
 
 const Form = ({ debug = true }: { debug?: boolean }) => {
-  const handler = useFormBuilder(schema, debug);
+  const handler = useReactiveFormBuilder(schema, debug);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -40,7 +40,7 @@ const Form = ({ debug = true }: { debug?: boolean }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <FormBuilder handler={handler} />
+      <ReactiveFormBuilder handler={handler} />
       <br />
       Valid: {handler.valid ? 'yes' : 'no'}
       <br />

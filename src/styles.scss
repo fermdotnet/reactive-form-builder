@@ -1,12 +1,12 @@
-.form-builder {
-  --form-builder-error-font-size: 13.5px;
-  --form-builder-error-color: #f73131;
-  --form-builder-font-size: 15px;
-  --form-builder-gap: 1rem;
+.reactive-form-builder {
+  --rfb-error-font-size: 13.5px;
+  --rfb-error-color: #f73131;
+  --rfb-font-size: 15px;
+  --rfb-gap: 1rem;
 
   display: grid;
-  gap: var(--form-builder-gap);
-  font-size: var(--form-builder-font-size);
+  gap: var(--rfb-gap);
+  font-size: var(--rfb-font-size);
 
   &__input-wrapper {
     display: flex;
@@ -19,8 +19,8 @@
 
   &__error-message {
     padding-top: 0.25rem;
-    font-size: var(--form-builder-error-font-size);
-    color: var(--form-builder-error-color);
+    font-size: var(--rfb-error-font-size);
+    color: var(--rfb-error-color);
     opacity: 1;
     transition: opacity 0.25s ease-in-out;
 
@@ -34,7 +34,7 @@
     input,
     select,
     textarea {
-      border-color: var(--form-builder-error-color);
+      border-color: var(--rfb-error-color);
     }
   }
 }

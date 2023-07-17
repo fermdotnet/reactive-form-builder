@@ -1,7 +1,7 @@
 import React from 'react';
 import { SchemaInternals } from 'joi';
 
-type SchemaItemType = {
+type RFBSchemaItem = {
   value: any;
   label: string;
   input: React.ComponentType;
@@ -9,11 +9,11 @@ type SchemaItemType = {
   joi: SchemaInternals;
 };
 
-export type FormBuilderSchemaType = {
-  [key: string]: SchemaItemType & any;
+export type RFBSchemaType = {
+  [key: string]: RFBSchemaItem & any;
 };
 
-export type FormBuilderInputCommonProps = {
+export type RFBInputCommonProps = {
   value: any;
   onChange: (value: any) => void;
   required: boolean;
@@ -26,10 +26,10 @@ export type FormBuilderInputCommonProps = {
   disabled?: boolean;
 };
 
-export type FormBuilderState = {
+export type RFBState = {
   valid: boolean;
   data: Record<string, any> | null;
   pristine: Record<string, boolean> | null;
   errors: Record<string, string> | null;
-  schema: FormBuilderSchemaType;
+  schema: RFBSchemaType;
 };

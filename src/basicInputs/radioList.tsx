@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import { FormBuilderInputCommonProps } from '../types';
+import { RFBInputCommonProps } from '../types';
 
 type Option = {
   label: string;
@@ -9,7 +9,7 @@ type Option = {
 
 export type Props = {
   options: Option[];
-} & FormBuilderInputCommonProps;
+} & RFBInputCommonProps;
 
 const RadioList = ({ options, value, onChange, disabled = false }: Props) => {
   const handleSelect = (newValue: any) => () => {
@@ -19,7 +19,7 @@ const RadioList = ({ options, value, onChange, disabled = false }: Props) => {
   };
 
   return (
-    <div className="form-builder__radio-list">
+    <div className="rfb__radio-list">
       {options.map((option, index) => (
         <div key={index}>
           <div onClick={handleSelect(option.value)} className={classnames({ selected: value === option.value })}>

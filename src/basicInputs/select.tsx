@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormBuilderInputCommonProps } from '../types';
+import { RFBInputCommonProps } from '../types';
 
 type Option = {
   label: string;
@@ -8,12 +8,12 @@ type Option = {
 
 export type SelectProps = {
   options: Option[];
-} & FormBuilderInputCommonProps;
+} & RFBInputCommonProps;
 
 const Select = ({ name, onChange, onBlur, options, value, disabled = false }: SelectProps) => {
   return (
     <select
-      className="form-builder__select"
+      className="rfb__select"
       onChange={({ target }) => onChange(target.value)}
       onBlur={onBlur}
       disabled={disabled}

@@ -1,7 +1,7 @@
 import React from 'react';
-import { FormBuilderInputCommonProps } from '../types';
+import { RFBInputCommonProps } from '../types';
 
-export type TextInputProps = FormBuilderInputCommonProps & {
+export type TextInputProps = RFBInputCommonProps & {
   value: string | number;
   type: string;
   name?: string;
@@ -16,7 +16,7 @@ const Text = ({ type, placeholder, name, value, onChange, onBlur, limit, disable
 
   return (
     <input
-      className="form-builder__input"
+      className="rfb__input"
       type={type}
       placeholder={placeholder}
       name={name}

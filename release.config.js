@@ -1,3 +1,3 @@
 module.exports = {
-  repositoryUrl: "https://github.com/fermdotnet/form-builder.git"
+  repositoryUrl: "https://github.com/fermdotnet/reactive-form-builder.git"
 };

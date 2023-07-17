@@ -1,5 +1,5 @@
 {
-  "name": "@ferdotnet/form-builder",
+  "name": "@ferdotnet/reacive-form-builder",
   "version": "0.0.0-development",
   "private": false,
   "publishConfig": {
@@ -10,7 +10,7 @@
   "types": "./lib/esm/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fermdotnet/form-builder.git"
+    "url": "https://github.com/fermdotnet/reactive-form-builder.git"
   },
   "author": "Fernando Munoz <munioz.fernando@gmail.com>",
   "license": "MIT",

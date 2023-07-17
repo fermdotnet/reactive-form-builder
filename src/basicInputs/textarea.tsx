@@ -1,14 +1,14 @@
 import React from 'react';
-import { FormBuilderInputCommonProps } from '../types';
+import { RFBInputCommonProps } from '../types';
 
-export type TextInputProps = FormBuilderInputCommonProps & {
+export type TextInputProps = RFBInputCommonProps & {
   placeholder?: string;
   limit?: number;
 };
 
 const Textarea = ({ value, name, onChange, onBlur, placeholder, limit, disabled = false }: TextInputProps) => (
   <textarea
-    className="form-builder__textarea"
+    className="rfb__textarea"
     name={name}
     placeholder={placeholder}
     value={value}

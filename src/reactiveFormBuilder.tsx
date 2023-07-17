@@ -5,13 +5,13 @@ interface Props {
   handler: any;
 }
 
-const FormBuilder = ({ handler }: Props) => {
+const ReactiveFormBuilder = ({ handler }: Props) => {
   if (!handler || handler.data === null) {
     return null;
   }
 
   return (
-    <div className="form-builder">
+    <div className="rfb">
       {Object.keys(handler.schema).map(key => {
         const item = handler.schema[key];
         const required = item.joi._flags?.presence === 'required';
@@ -21,14 +21,10 @@ const FormBuilder = ({ handler }: Props) => {
         return (
           <div
             key={key}
-            data-testid={`form_builder_${key}`}
-            className={classnames(
-              'form-builder__input-wrapper',
-              { error: !pristine && error },
-              `form-builder__input-${key}`
-            )}
+            data-testid={`rfb_${key}`}
+            className={classnames('rfb__input-wrapper', { error: !pristine && error }, `rfb__input-${key}`)}
           >
-            <label className="form-builder__label" htmlFor={`form_builder_${item.name}`}>
+            <label className="rfb__label">
               {item.label}
               {required ? ' *' : ''}
             </label>
@@ -44,7 +40,7 @@ const FormBuilder = ({ handler }: Props) => {
               onChange: handler.setFormData(key)
             })}
 
-            <span className="form-builder__error-message">{!pristine && !!error ? error : ''}</span>
+            <span className="rfb__error-message">{!pristine && !!error ? error : ''}</span>
           </div>
         );
       })}
@@ -52,4 +48,4 @@ const FormBuilder = ({ handler }: Props) => {
   );
 };
 
-export default FormBuilder;
+export default ReactiveFormBuilder;

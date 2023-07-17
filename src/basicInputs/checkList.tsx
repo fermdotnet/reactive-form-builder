@@ -1,13 +1,13 @@
 import React from 'react';
 import classnames from 'classnames';
-import { FormBuilderInputCommonProps } from '../types';
+import { RFBInputCommonProps } from '../types';
 
 type Option = {
   label: string;
   value: string;
 };
 
-export type Props = FormBuilderInputCommonProps & {
+export type Props = RFBInputCommonProps & {
   value: any[];
   options: Option[];
 };
@@ -24,7 +24,7 @@ const CheckList = ({ options, value, onChange, disabled = false }: Props) => {
   };
 
   return (
-    <div className="form-builder__check-list">
+    <div className="rfb__check-list">
       {options.map((option, index) => (
         <div key={index}>
           <div onClick={handleSelect(option.value)} className={classnames({ selected: value.includes(option.value) })}>

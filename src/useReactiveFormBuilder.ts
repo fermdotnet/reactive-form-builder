@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import joi from 'joi';
-import { FormBuilderSchemaType, FormBuilderState } from './types';
+import { RFBSchemaType, RFBState } from './types';
 
 const objectToArray = (object: Object) => {
   const array = Object.entries(object).map(([k, v]) => ({ ...v, id: k }));
@@ -12,13 +12,12 @@ export const objectMap = (obj: any, fn: Function) => {
   return arr.reduce((acc, cur) => ({ ...acc, [cur[0]]: cur[1] }), {}); // Object.fromEntries
 };
 
-const fillDefaultData = (schema: FormBuilderSchemaType) =>
-  schema ? objectMap(schema, (item: any) => item.value) : null;
-const fillDefaultPristine = (schema: FormBuilderSchemaType) => (schema ? objectMap(schema, () => true) : null);
-const fillDefaultErrors = (schema: FormBuilderSchemaType) => (schema ? objectMap(schema, () => '') : null);
+const fillDefaultData = (schema: RFBSchemaType) => (schema ? objectMap(schema, (item: any) => item.value) : null);
+const fillDefaultPristine = (schema: RFBSchemaType) => (schema ? objectMap(schema, () => true) : null);
+const fillDefaultErrors = (schema: RFBSchemaType) => (schema ? objectMap(schema, () => '') : null);
 
-function useFormBuilder(schema: FormBuilderSchemaType = {}, debug: boolean = false) {
-  const [form, setForm] = useState<FormBuilderState>({
+function useReactiveFormBuilder(schema: RFBSchemaType = {}, debug: boolean = false) {
+  const [form, setForm] = useState<RFBState>({
     valid: false,
     data: fillDefaultData(schema),
     pristine: fillDefaultPristine(schema),
@@ -43,7 +42,7 @@ function useFormBuilder(schema: FormBuilderSchemaType = {}, debug: boolean = fal
     }));
   };
 
-  const setSchema = (schema: FormBuilderSchemaType) => {
+  const setSchema = (schema: RFBSchemaType) => {
     setForm((prev: any) => ({ ...prev, schema }));
   };
 
@@ -118,4 +117,4 @@ function useFormBuilder(schema: FormBuilderSchemaType = {}, debug: boolean = fal
   };
 }
 
-export default useFormBuilder;
+export default useReactiveFormBuilder;
